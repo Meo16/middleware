@@ -35,10 +35,10 @@ app.get('/', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
     const userId = Number(req.params.id);
-    const getUser = users.find((account) => user.id === userId);
+    const getUser = users.find((user) => user.id === userId);
   
     if (!getUser) {
-      response.status(500).send('Account not found.')
+      response.status(500).send('User not found.')
     } else {
       response.json(getUser);
     }

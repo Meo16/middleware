@@ -33,6 +33,17 @@ app.get('/', (req, res) => {
     res.send('GET request naar de homepage')
 });
 
+app.get('/users/:id', (req, res) => {
+    const userId = Number(req.params.id);
+    const getUser = users.find((account) => user.id === userId);
+  
+    if (!getUser) {
+      response.status(500).send('Account not found.')
+    } else {
+      response.json(getUser);
+    }
+  });
+
 app.post('/users', (req, res) => {
     const newUser = req.body;
 

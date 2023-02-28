@@ -7,7 +7,7 @@ app.use(express.urlencoded());
 
 app.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`));
 
-let users = [
+let accounts = [
     {
         "id": 1,
         "username": "paulhal",
@@ -26,29 +26,29 @@ let users = [
 ];
 
 app.get('/users', (req, res) => {
-    res.json(users);
+    res.json(accounts);
 });
 
 app.get('/', (req, res) => {
     res.send('GET request naar de homepage')
 });
 
-app.get('/users/:id', (req, res) => {
-    const userId = Number(req.params.id);
-    const getUser = users.find((user) => user.id === userId);
-  
-    if (!getUser) {
-      response.status(500).send('User not found.')
-    } else {
-      response.json(getUser);
-    }
-  });
+app.get('/accounts/:id', (req, res) => {
+  const accountId = Number(request.params.id);
+  const getAccount = accounts.find((account) => account.id === accountId);
+
+  if (!getAccount) {
+    response.status(500).send('Account not found.')
+  } else {
+    response.json(getAccount);
+  }
+});
 
 app.post('/users', (req, res) => {
-    const newUser = req.body;
+    const newAccount = req.body;
 
-    users.push(newUser);
+    users.push(newAccount);
 
-    res.json(users);
+    res.json(accounts);
 });
 

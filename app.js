@@ -25,7 +25,7 @@ let accounts = [
     }
 ];
 
-app.get('/users', (req, res) => {
+app.get('/accounts', (req, res) => {
     res.json(accounts);
 });
 

@@ -44,7 +44,7 @@ app.get('/accounts/:id', (req, res) => {
   }
 });
 
-app.post('/users', (req, res) => {
+app.post('/accounts', (req, res) => {
     const newAccount = req.body;
 
     users.push(newAccount);

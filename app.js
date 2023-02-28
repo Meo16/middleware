@@ -34,13 +34,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/accounts/:id', (req, res) => {
-  const accountId = Number(request.params.id);
+  const accountId = Number(req.params.id);
   const getAccount = accounts.find((account) => account.id === accountId);
 
   if (!getAccount) {
-    response.status(500).send('Account not found.')
+    res.status(500).send('Account not found.')
   } else {
-    response.json(getAccount);
+    res.json(getAccount);
   }
 });
 

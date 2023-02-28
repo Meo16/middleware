@@ -25,14 +25,6 @@ let accounts = [
     }
 ];
 
-app.get('/accounts', (req, res) => {
-    res.json(accounts);
-});
-
-app.get('/', (req, res) => {
-    res.send('GET request naar de homepage')
-});
-
 app.get('/accounts/:id', (req, res) => {
   const accountId = Number(req.params.id);
   const getAccount = accounts.find((account) => account.id === accountId);

@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 app.post('/users', (req, res) => {
     const newUser = req.body;
 
-    accounts.push(newUser);
+    users.push(newUser);
 
     res.json(users);
 });
